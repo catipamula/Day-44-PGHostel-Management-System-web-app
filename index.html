@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hostel Management System</title>
+    <style>
+        /* CSS styles */
+        body {
+            font-family: Arial, sans-serif;
+            background-image: url(Hostel.jpg);
+            background-repeat: no-repeat;
+            background-size: 200vh;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h2 {
+            text-align: center;
+            color: #333;
+        }
+        input[type="text"], select {
+            width: 100%;
+            padding: 10px;
+            margin: 5px 0;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+        button {
+            width: 100%;
+            padding: 10px;
+            margin-top: 10px;
+            border: none;
+            border-radius: 4px;
+            background-color: #080b20;
+            color: white;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #4545eb;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h2>Hostel Management System</h2>
+    <form id="hostelForm">
+        <label for="hostelName">Hostel Name:</label>
+        <input type="text" id="hostelName" name="hostelName" required>
+
+        <label for="roomNumber">Room Number:</label>
+        <input type="text" id="roomNumber" name="roomNumber" required>
+
+        <label for="studentName">Student Name:</label>
+        <input type="text" id="studentName" name="studentName" required>
+
+        <label for="studentID">Student ID:</label>
+        <input type="text" id="studentID" name="studentID" required>
+
+        <label for="roomType">Room Type:</label>
+        <select id="roomType" name="roomType" required>
+            <option value="">Select room type</option>
+            <option value="Single">Single</option>
+            <option value="Double">Double</option>
+            <option value="Triple">Triple</option>
+        </select>
+
+        <button type="button" onclick="submitForm()">Submit</button>
+    </form>
+    <div id="output"></div>
+</div>
+
+<script>
+    // JavaScript code
+    function submitForm() {
+        // Get form data
+        var hostelName = document.getElementById("hostelName").value;
+        var roomNumber = document.getElementById("roomNumber").value;
+        var studentName = document.getElementById("studentName").value;
+        var studentID = document.getElementById("studentID").value;
+        var roomType = document.getElementById("roomType").value;
+
+        // Display submitted data
+        var output = document.getElementById("output");
+        output.innerHTML = "<h3>Submitted Information:</h3>" +
+            "<p><strong>Hostel Name:</strong> " + hostelName + "</p>" +
+            "<p><strong>Room Number:</strong> " + roomNumber + "</p>" +
+            "<p><strong>Student Name:</strong> " + studentName + "</p>" +
+            "<p><strong>Student ID:</strong> " + studentID + "</p>" +
+            "<p><strong>Room Type:</strong> " + roomType + "</p>";
+    }
+</script>
+
+</body>
+</html>
